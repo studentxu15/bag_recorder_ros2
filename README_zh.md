@@ -29,7 +29,7 @@ cd ~/ros2_ws/src
 
 2. 克隆本仓库：
 ```bash
-git clone https://github.com/你的用户名/bag_recorder.git
+git clone https://github.com/studentxu15/bag_recorder_ros2.git
 ```
 
 3. 构建包：

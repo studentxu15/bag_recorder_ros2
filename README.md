@@ -32,7 +32,7 @@ cd ~/ros2_ws/src
 
 2. Clone this repository:
 ```bash
-git clone https://github.com/your_username/bag_recorder.git
+git clone https://github.com/studentxu15/bag_recorder_ros2.git
 ```
 
 3. Build the package:
