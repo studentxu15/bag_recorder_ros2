@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>bag_recorder</name>
+  <version>0.1.0</version>
+  <description>Python rosbag2 recorder node with bag split and topic config support.</description>
+  <maintainer email="xuchunbobo520@gmail.com">StudentXu</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>rosbag2_py</depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

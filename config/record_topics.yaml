@@ -1,0 +1,3 @@
+# 需录制的ROS2话题列表（可按需增删）
+topics:
+  - /livox/lidar
