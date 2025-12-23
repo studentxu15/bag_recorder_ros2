@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>bag_recorder</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <description>Python rosbag2 recorder node with bag split and topic config support.</description>
   <maintainer email="xuchunbobo520@gmail.com">StudentXu</maintainer>
   <license>Apache-2.0</license>

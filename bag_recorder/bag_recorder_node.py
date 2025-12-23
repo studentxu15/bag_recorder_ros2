@@ -2,7 +2,7 @@
 import os
 import yaml
 import rclpy
-import shutil
+import signal
 from rclpy.node import Node
 from rclpy.serialization import serialize_message
 from rosbag2_py import (
@@ -252,10 +252,22 @@ class BagRecorderNode(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = BagRecorderNode()
+    stopped = [False]
+
+    def handle_signal(signum, frame):
+        if not stopped[0]:
+            node.get_logger().info(f"Received signal {signum}, stopping recording...")
+            node.stop_recording()
+            stopped[0] = True
+
+    signal.signal(signal.SIGTERM, handle_signal)
+    signal.signal(signal.SIGHUP, handle_signal)
+    signal.signal(signal.SIGINT, handle_signal)  # Ctrl+C 也可以
+
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        pass
+        handle_signal(signal.SIGINT, None)
     finally:
         node.destroy_node()
         rclpy.shutdown()
